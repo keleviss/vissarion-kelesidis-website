@@ -27,16 +27,12 @@ body.dark-theme {
   --color-border: #ecf0f13e;
 }
 
-h1 {
-
-}
-
-h2 {
-
+h1, h2 {
+  margin: 0;
 }
 
 p {
-
+  
 }
 
 a {
@@ -230,4 +226,3 @@ section.about-me {
 section.about-me h2 {
   font-size: 2rem;
 }
-
