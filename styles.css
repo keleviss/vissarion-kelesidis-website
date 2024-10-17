@@ -49,14 +49,35 @@ a:hover {
 }
 
 .container-full {
-  display: flex;
   width: 100%;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
   display: flex;
   width: 1340px;
+}
+
+.btn {
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
+  /* background-color: var(--color-background); */
+  background-color: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  /* transition: color 0.3s; */
+}
+
+.btn:hover {
+  color: var(--color-background);
+  background-color: var(--color-text);
 }
 
 /* Navbar Styles */
@@ -154,3 +175,59 @@ div#socials {
 #socials a i:hover {
   color: var(--color-hover);
 }
+
+/* Hero Section Styles */
+section.hero {
+  padding-top: 5rem;
+  height: 600px;
+}
+
+section.hero .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 2;
+  padding-right: 3rem;
+}
+
+#hero-title {
+  font-size: 4rem;
+  margin: 0;
+}
+
+#hero-title span {
+  font-size: 4.4rem;
+}
+
+#hero-paragraph {
+  font-size: 1.3rem;
+}
+
+#hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+#profile-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.hero img {
+  border-radius: 250px;
+  width: 75%;
+  height: fit-content;
+}
+
+/* About Me Styles */
+section.about-me {
+  padding-top: 5rem;
+  justify-content: center;
+}
+
+section.about-me h2 {
+  font-size: 2rem;
+}
+
