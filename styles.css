@@ -1,6 +1,6 @@
 :root {
-  --font-primary: 'DM Sans', sans-serif;
-  /* --font-primary: Inter, sans-serif; */
+  /* --font-primary: 'DM Sans', sans-serif; */
+  --font-primary: Inter, sans-serif;
   --color-primary: #3498db;
   --color-secondary: #2ecc71;
   --color-accent: #e74c3c;
@@ -8,6 +8,7 @@
   --color-text: #2c3e50;
   --color-border: #3f516452;
   --color-hover: #8095d4;
+  --color-shadow: #1c1e2155;
 }
 
 /* Global Styles */
@@ -25,14 +26,19 @@ body.dark-theme {
   --color-background: #1c1e21;
   --color-text: #ecf0f1;
   --color-border: #ecf0f13e;
+  --color-shadow: #0a0a0a;
 }
 
-h1, h2 {
+h1, h2, h3 {
   margin: 0;
 }
 
+h2 {
+  font-size: 2rem;
+}
+
 p {
-  
+  margin-bottom: 0;
 }
 
 a {
@@ -221,8 +227,77 @@ section.hero img {
 section.about-me {
   padding-top: 5rem;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-section.about-me h2 {
-  font-size: 2rem;
+.about-me .cards {
+  padding-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-me .card-item {
+  flex: 1;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.about-me .card-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 2px 2px 10px var(--color-shadow);
+}
+
+section.skills {
+  padding-top: 12rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dev-icons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
+  /* box-shadow: 0 0 5px var(--color-shadow); */
+}
+
+.icon i {
+  font-size: 2.5rem;
+}
+
+.projects {
+  padding-top: 12rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-gallery {
+  padding-top: 3rem;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  gap: 2rem;
+}
+
+.project-card {
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  padding: 2rem;
 }
