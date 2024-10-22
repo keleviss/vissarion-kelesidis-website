@@ -3,14 +3,13 @@ const themeSwitch = document.getElementById('theme-switch')
 themeSwitch.addEventListener('click', () => {
   const checkball = document.getElementById('checkball');
   const check = checkball.classList.value.split(' ');
-  const icon = document.querySelector('i');
+  const github = document.querySelector('i');
 
-  icon.classList.toggle('fa-sun');
-  icon.classList.toggle('fa-moon');
+  github.classList.toggle('fa-sun');
+  github.classList.toggle('fa-moon');
 
   document.body.classList.toggle('dark-theme');
-  // document.getElementById('github').classList.toggle('colored');
-  document.getElementById('checkball').classList.toggle('dark');
+  // document.getElementById('checkball').classList.toggle('dark');
 
   if (check.includes('checked')) {
     checkball.style.transform = 'translateX(0)';
@@ -22,6 +21,32 @@ themeSwitch.addEventListener('click', () => {
     checkball.classList.toggle('checked');
   }
 
-  const c = checkball.classList.value;
-  console.log(c);
+  // const c = checkball.classList.value;
+  // console.log(c);
+})
+
+document.querySelectorAll('.icon').forEach((icon) => {
+
+  icon.addEventListener('mouseover', (event) => {
+    const previousIcon = event.currentTarget.previousElementSibling;
+    const nextIcon = event.currentTarget.nextElementSibling;
+    if (previousIcon && previousIcon.classList.contains('icon')) {
+      previousIcon.classList.toggle('hovered');
+    }
+    if (nextIcon && nextIcon.classList.contains('icon')) {
+      nextIcon.classList.toggle('hovered');
+    }
+  })
+
+  icon.addEventListener('mouseout', (event) => {
+    const previousIcon = event.currentTarget.previousElementSibling;
+    const nextIcon = event.currentTarget.nextElementSibling;
+    if (previousIcon && previousIcon.classList.contains('icon')) {
+      previousIcon.classList.toggle('hovered');
+    } 
+    if (nextIcon && nextIcon.classList.contains('icon')) {
+      nextIcon.classList.toggle('hovered');
+    }
+  })
+
 })
