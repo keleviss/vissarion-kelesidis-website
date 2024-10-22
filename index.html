@@ -28,55 +28,79 @@
 
 <body>
 
+  <!-- Full Width Header -->
   <header class="container-full">
-    <nav class="container">
+
+    <!-- Navbar -->
+    <nav class="container-fixed">
+
+      <!-- Left Aligned Logo -->
       <div id="logo">
         <a href="">Vissarion Kelesidis</a>
       </div>
+
+      <!-- Right Aligned Nav Links and Dark Mode Switch -->
       <div id="nav-links">
+
+        <!-- Nav Links -->
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Projects</a></li>
         </ul>
+
+        <!-- Light/Dark Mode Switch -->
         <div id="light-mode">
           <div id="theme-switch">
-            <div id="checkball" class="unchecked">
+            <div id="checkball" class="flex-center unchecked">
               <i class="fa-solid fa-sun"></i>
             </div>
           </div>
         </div>
-        <div id="socials">
+
+        <!-- Git Hub Link -->
+        <div id="github">
           <a href="https://www.github.com/keleviss">
             <i id="github" class="devicon-github-original colored"></i>
           </a>
         </div>
+
       </div>
     </nav>
   </header>
 
+  <!-- Main Container Full Width -->
   <main class="container-full">
-    <section class="hero container">
-      <div class="content">
-        <h1 id="hero-title">Hello, I'm Vissarion Kelesidis <span>Full Stack Web Developer</span></h1>
-        <p id="hero-paragraph">A dynamic and innovative web developer with a fresh perspective on digital solutions.
-          With solid experience
-          and a diverse tech stac, I'm ready to take on the next challenge.</p>
-        <div id="hero-buttons">
+
+    <!-- Hero Section -->
+    <section id="hero" class="container-fixed">
+
+      <div class="flex-col content">
+
+        <h1>Hello, I'm Vissarion</h1>
+        <h1>I create beautiful, exciting, user-friendly <span>web apps</span></h1>
+
+        <div id="cta-buttons">
           <button class="btn">My Projects</button>
           <button class="btn">Contact me</button>
         </div>
+
       </div>
-      <div id="profile-img">
+
+      <div id="profile-img" class="flex-center">
         <img src="./resources/IMG_20231025_125503_Cropped.jpg" alt="An image of Vissarion Kelesidis">
       </div>
+
     </section>
-    <section class="about-me container">
+
+    <!-- About Me Section -->
+    <section id="about-me" class="flex-col container-fixed">
       <h2>About Me</h2>
+
       <div class="cards">
         <div id="edu" class="card-item">
           <h3>Education</h3>
-          <p>Currently, I'm pursuing a Master's degree in Computer Science and Engineering at the University of West
+          <p>Currently, I'm pursuing a <b>Master's degree in Computer Science and Engineering</b> at the University of West
             Attica. This academic journey has provided me with a strong theoretical foundation in computer science
             principles and cutting-edge technologies. My coursework has covered a wide range of topics, from algorithms
             and data structures to advanced web development techniques, preparing me for the challenges of the
@@ -84,25 +108,26 @@
         </div>
         <div id="work" class="card-item">
           <h3>Work Experience</h3>
-          <p>I have hands on experience as a Front-End Developer at a Digital Marketing Agency. In this role, I honed my
-            skills in HTML, CSS, JavaScript, React, and Bootstrap. I also gained valuable experience with WordPress,
-            Photoshop, Illustrator, and Figma. This position allowed me to design and redesign modern, user-friendly
-            websites for various clients, giving me a strong foundation in creating visually appealing and responsive
-            websites, blogs, e-shops, portfolios and more.</p>
+          <p>I have <b>hands on experience</b> as a Front-End Developer at a Digital Marketing Agency. In this role, I honed my skills in HTML, CSS, JavaScript, React, and Bootstrap. I also gained valuable experience with WordPress, Photoshop, Illustrator, and Figma. This position allowed me to design and redesign modern, user-friendly websites for various clients, giving me a strong foundation in creating visually appealing and responsive websites, blogs, e-shops, portfolios and more.</p>
         </div>
         <div id="passion" class="card-item">
-          <h3>Personal Journey</h3>
+          <h3>Passion</h3>
           <p>Throughout my academic and professional journey, I've maintained a commitment to personal growth and
-            continuous learning. So, despite my studies and work experience I have dedicated my self to stay on top of
-            the most recent technologies and trends, while working on my personal and technical skills through
+            continuous learning. So, despite my studies and work experience I have dedicated my self to stay <b>on top of
+              the most recent technologies and trends</b>, while working on my personal and technical skills through
             professional courses and projects. Also the combination of web development expertise and design proficiency
-            sets me apart in the this challenging and comptetitive field.</p>
+            sets me apart in this challenging and comptetitive field.</p>
         </div>
       </div>
+
     </section>
-    <section class="skills container">
+
+    <!-- Skills Section -->
+    <section id="skills" class="flex-col container-fixed">
       <h2>My Skills</h2>
-      <div class="dev-icons">
+
+      <div id="dev-icons">
+
         <div class="icon">
           <i class="devicon-html5-plain"></i>
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="html icon"/>
@@ -157,30 +182,66 @@
           <i class="devicon-figma-plain"></i>
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" />
         </div>
+      
       </div>
+
     </section>
-    <section class="projects container">
+
+    <!-- Projects Section -->
+    <section id="projects" class="flex-col container-fixed">
       <h2>Projects</h2>
+
       <div class="project-gallery">
-        <div class="project-card">
+        <div class="card-item">
           <h3>Mythos Travel</h3>
           <p>Mythos Travel is a full-stack web application designed searching available trips and booking bus tickets. Using <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, <b>JQuery</b>, and the <b>W3.CSS</b> framework, I built a modern and responsive front end design. While, the back end was developed with <b>Node.js</b> and <b>Express.js</b> and connects to a <b>MongoDB</b> database through a DAO pattern, route, and controller structure. The front end is deployed on Netlify, while the back end is set to be deployed on AWS Lambda for serverless scalability.</p>
         </div>
-        <div class="project-card">
+        <div class="card-item">
           <h3>TaleCrow</h3>
           <p>This project is a <b>fully responsive website</b> designed and developed to showcase a concept for a game studio's portfolio, services, and contact information. The website is built using simple web technologies, including <b>only HTML and CSS</b>. The layout is built with Flexbox and is enhanced with media queries to ensure it is fully responsive across different screen sizes. While working on this project I challenged my self to refine my coding skills and come up with a beautiful and modern design.</p>
         </div>
-        <div class="project-card">
+        <div class="card-item">
           <h3>Purrfect Typing</h3>
-          <p>Purrfect Typing is a minimalistic web application designed to test and challenge your typing skills. This project features a clean and simple design, while focusing on handling <b>JavaScript keyboard events</b> and <b>manipulating the DOM</b> to deliver a satisfying and fun typing experience. They typing test includes a unique cursor and an integrated system that accurately detects and highlights incorrectly typed letters and spaces, making the practice both engaging and effective.</p>
+          <p>Purrfect Typing is a minimalistic web application designed to test and challenge your typing skills. This project features a clean and simple design, while focusing on handling <b>JavaScript keyboard events</b> and <b>manipulating the DOM</b> to deliver a satisfying and fun typing experience. The typing test includes a unique cursor and an integrated system that accurately detects and highlights incorrectly typed letters and spaces, making the practice both engaging and effective.</p>
         </div>
-        <div class="project-card">
+        <div class="card-item">
           <h3>Serv Player</h3>
-          <p>Serv Player is a mobile application for Android that enables users to play audio files stored on their devices. The was developed with <b>Java</b> in <b>Android Studio</b> and it features a single-page interface with a <b>RecyclerView</b> to display available audio files, the app provides essential playback controls for a smooth user experience. It efficiently handles background playback through a custom <b>Media Player Service</b>, allowing users to enjoy their music seamlessly while navigating other apps.</p>
+          <p>Serv Player is a mobile application for Android that enables users to play audio files stored on their devices. The app was developed with <b>Java</b> and <b>XML</b> in <b>Android Studio</b> and it features a single-page interface with a <b>RecyclerView</b> to display available audio files. The app also provides essential playback controls for a smooth user experience. It efficiently handles background playback through a custom <b>Media Player Service</b>, allowing users to enjoy their music seamlessly while navigating other apps.</p>
         </div>
       </div>
+
     </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="flex-col container-fixed">
+      
+      <h1>Let's Connect!</h1>
+      <h1><span>I'm open to Work</span></h1>
+
+      <div class="">
+        <div class="">
+
+        </div>
+      </div>
+
+    </section>
+
   </main>
+
+  <!-- Footer -->
+  <footer class="container-full">
+
+    <div class="container">
+
+      <div id="socials">
+        <h3>Vissarion Kelesidis</h3>
+
+      </div>
+
+
+    </div>
+
+  </footer>
 
 </body>
 
