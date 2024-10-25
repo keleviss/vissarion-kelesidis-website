@@ -28,21 +28,16 @@
 
 <body>
 
-  <!-- Full Width Header -->
+  <!-- Header -->
   <header class="container-full">
 
-    <!-- Navbar -->
     <nav class="container-fixed">
-
-      <!-- Left Aligned Logo -->
       <div id="logo">
         <a href="">Vissarion Kelesidis</a>
       </div>
 
-      <!-- Right Aligned Nav Links and Dark Mode Switch -->
       <div id="nav-links">
 
-        <!-- Nav Links -->
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
@@ -58,10 +53,9 @@
           </div>
         </div>
 
-        <!-- Git Hub Link -->
-        <div id="github">
+        <div id="github-link">
           <a target="_blank" href="https://www.github.com/keleviss">
-            <i id="github" class="devicon-github-original colored"></i>
+            <i class="devicon-github-original colored"></i>
           </a>
         </div>
 
@@ -249,8 +243,6 @@
         <h1><span>I'm open to Work</span></h1>
         <button class="btn">Get in touch</button>
       </div>
-      <!-- <div class="flex-col">
-      </div> -->
 
     </section>
 
@@ -261,23 +253,75 @@
 
     <div class="container-fixed">
 
-      <div id="socials">
-        <a href="">
+      <div id="socials" class="footer-col">
+        <a id="home-page" href="">
           <h3>Vissarion Kelesidis</h3>
         </a>
-        <div class="social-links">
-          <a target="_blank" href="https://www.facebook.com/profile.php?id=100077396446673">
-            <i class="fa-brands fa-facebook fa-xl"></i>
-          </a>
-          <a target="_blank" href="https://www.linkedin.com/in/vissarion-kelesidis/">
-            <i class="fa-brands fa-linkedin fa-xl"></i>
-          </a>
-          <a target="_blank" href="https://github.com/keleviss">
-            <i class="fa-brands fa-github fa-xl"></i>
-          </a>
+        <ul id="social-links">
+          <li>
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=100077396446673">
+              <i class="fa-brands fa-facebook fa-xl"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.linkedin.com/in/vissarion-kelesidis/">
+              <i class="fa-brands fa-linkedin fa-xl"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/keleviss">
+              <i class="fa-brands fa-github fa-xl"></i>
+            </a>
+          </li>
+        </ul>
+        <div id="language">
+          <div id="dropdown-menu" class="hidden">
+            <p class="dropdown-item" data-lang="English">English</p>
+            <p class="dropdown-item" data-lang="Greek">Greek</p>
+          </div>
+          <div id="lang-dropdown">
+            <p id="selected-lang">English</p>
+            <i class="fa-solid fa-chevron-down fa-2xs"></i>
+          </div>
         </div>
       </div>
 
+      <div id="project-links" class="footer-col">
+        <h3>Projects</h3>
+        <ul>
+          <li><a target="_blank" href="https://github.com/keleviss/mythostravel-front-end">Mythos Travel</a></li>
+          <li><a target="_blank" href="https://github.com/keleviss/Game-Studio-Website-Design">TaleCrow</a></li>
+          <li><a target="_blank" href="https://github.com/keleviss/Purrfect-Typing">Purrfect Typing</a></li>
+          <li><a target="_blank" href="https://github.com/keleviss/androidMusicPlayer">Serv Player</a></li>
+        </ul>
+      </div>
+
+      <div id="footer-links" class="footer-col">
+        <h3>Links</h3>
+        <ul>
+          <li><a target="_blank" href="#">Resume</a></li>
+          <li><a target="_blank" href="#">Projects</a></li>
+          <li><a target="_blank" href="#">Contact Me</a></li>
+        </ul>
+      </div>
+
+      <div id="contact-info" class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+          <li id="location">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Egaleo, Athens, Greece</p>
+          </li>
+          <li id="email">
+            <i class="fa-solid fa-envelope"></i>
+            <p>kelesidisvissarion@gmail.com</p>
+          </li>
+          <li id="phone">
+            <i class="fa-solid fa-phone"></i>
+            <p>(+30) 694 904 7906</p>
+          </li>
+        </ul>
+      </div>
 
     </div>
 
