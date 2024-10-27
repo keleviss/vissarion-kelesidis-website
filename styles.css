@@ -538,8 +538,8 @@ footer a:hover {
   };
 
   footer {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   footer .container-fixed {
@@ -626,6 +626,10 @@ footer a:hover {
   /* Navbar padding fix */
   nav.container-fixed {
     padding-top: 1rem;
+  }
+
+  footer {
+    font-size: small;
   }
 }
 
