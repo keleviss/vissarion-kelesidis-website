@@ -550,6 +550,10 @@ footer a:hover {
   }
 }
 @media only screen and (max-width: 950px) {
+  nav.container-fixed {
+    padding-top: 1rem;
+  }
+
   #nav-links ul {
     display: none;
   }
@@ -617,6 +621,10 @@ footer a:hover {
   header, main {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  nav.container-fixed {
+    padding-top: 0.5rem;
   }
 }
 
