@@ -80,7 +80,7 @@ offCanvasCloseIcon.addEventListener('click', hideOffCanvasMenu)
 window.addEventListener('resize', () => {
   const width = window.innerWidth;
 
-  if (offCanvasShown === true && width >= 950) {
+  if (offCanvasShown === true && width >= 720) {
     hideOffCanvasMenu();
   }
 })
