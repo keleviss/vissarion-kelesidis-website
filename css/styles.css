@@ -39,9 +39,8 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-header, main {
-  padding-left: 3rem;
-  padding-right: 3rem;
+main {
+  padding: 0 2rem;
 }
 
 h1, h2, h3 {
@@ -137,9 +136,12 @@ section.container-fixed {
 
 /* Navbar Styles */
 nav.container-fixed {
-  padding-top: 2rem;
+  z-index: 3;
+  padding-top: 1rem;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--color-background);
+  transition: background-color 0.3s;
 }
 
 
@@ -148,11 +150,6 @@ nav #logo a {
   font-size: 1.5rem;
   font-weight: 700;
   border-radius: 13px;
-  padding: 5px 10px;
-}
-
-nav #logo a:hover {
-  background-color: var(--color-card-bg);
 }
 
 /* Navbar Links */
@@ -163,7 +160,7 @@ div#nav-links {
 }
 
 ul.desktop-links,
-#light-mode,
+#navbar-appearance,
 #github-link {
   padding: 0 0.8rem;
 }
@@ -174,43 +171,38 @@ ul.desktop-links {
 
 ul.desktop-links li {
   display: inline-block;
-  padding-left: 1.5rem;
+  padding-left: 1rem;
 }
 
 ul.desktop-links li a {
   font-size: 1.1rem;
   font-weight: 600;
   border-radius: 10px;
-  padding: 5px 10px;
-}
-
-ul.desktop-links li a:hover {
-  background-color: var(--color-card-bg);
 }
 
 /* Theme Switch Toggle */
-#light-mode {
+#navbar-appearance {
   border-left: 1px solid var(--color-border);
   border-right: 1px solid var(--color-border);
 }
 
-#theme-switch {
+.theme-switch {
   border-radius: 20px;
   border: 1px solid var(--color-border);
   background-color: var(--color-border);
-  height: 1.1rem;
-  width: 2.2rem;
+  height: 1.3rem;
+  width: 2.4rem;
   padding: 0.05rem 0.05rem;
   cursor: pointer;
   transition: background-color 0.3s;
   transition: border 0.3s;
 }
 
-#theme-switch:hover {
+.theme-switch:hover {
   border: 1px solid var(--color-link-hover);
 }
 
-#checkball {
+.checkball {
   position: relative;
   left: 0;
   background-color: var(--color-background);
@@ -221,7 +213,11 @@ ul.desktop-links li a:hover {
   transition: transform 0.2s ease;
 }
 
-#checkball i {
+.dark-theme .checked {
+  transform: translateX(100%);
+}
+
+.fa-sun, .fa-moon {
   font-size: 0.65rem;
 }
 
@@ -246,15 +242,14 @@ ul.desktop-links li a:hover {
 }
 
 /* Mobile Navigation Menu */
-#mobile-nav-menu {
-  display: none;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-#mobile-nav-menu:hover {
+.mobile-nav-menu:hover {
   background-color: var(--color-card-bg);
   cursor: pointer;
+}
+
+#offcanvas-bars-icon,
+#offcanvas-close-icon {
+  display: none;
 }
 
 /* Off Canavs Menu */
@@ -265,28 +260,16 @@ ul.desktop-links li a:hover {
   right: 0;
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
   transform: translateY(-100%);
-  background-color: var(--color-card-bg);
-  transition: transform 0.3s;
+  background-color: var(--color-background);
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-#offcanvas-menu div {
-  gap: 2rem;
+#offcanvas-menu div.container-full {
+  margin-top: 3.5rem;
   padding: 1rem;
   align-items: unset;
-}
-
-#offcanvas-menu i {
-  align-self: flex-end;
-}
-
-#offcanvas-menu i:hover {
-  cursor: pointer;
-  color: var(--color-link-hover);
-}
-
-#offcanvas-menu i:active {
-  color: var(--color-btn1-hover);
 }
 
 #offcanvas-menu ul {
@@ -298,18 +281,31 @@ ul.desktop-links li a:hover {
   gap: 1rem;
 }
 
-#offcanvas-menu li {
-  padding: 0;
+#offcanvas-menu li a,
+li#appearance {
+  padding: 15px;
+  font-weight: 600;
 }
 
 #offcanvas-menu li a {
-  background-color: var(--color-card-bg-hover);
-  padding: 10px;
-  border-radius: 10px;
   display: block;  
 }
 
+#appearance {
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-card-bg-hover);
+  transition: background-color .3s;
+}
+
+
+
 /* Hero Section Styles */
+section#hero {
+  padding-top: 12rem;
+}
+
 #hero .content {
   flex: 2;
   display: flex;
@@ -527,6 +523,7 @@ footer a:hover {
   border: 1px solid var(--color-border);
   border-radius: 10px;
   width: 50%;
+  min-width: fit-content;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
@@ -561,9 +558,13 @@ footer a:hover {
 }
 
 /* Media Queries */
-@media only screen and (max-width: 1380px) {
+@media only screen and (max-width: 1380px) {  
   .container-fixed {
     width: 100%;
+  }
+
+  nav.container-fixed {
+    padding: 1rem;
   }
 
   #about-me .cards {
@@ -611,20 +612,23 @@ footer a:hover {
     column-gap: 2rem;
   }
 }
-@media only screen and (max-width: 950px) {
-  nav.container-fixed {
-    padding-top: 1rem;
-  }
 
-  #nav-links .desktop-links {
+@media only screen and (min-width: 950px) {
+  #offcanvas-bars-icon {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 950px) {
+
+  #nav-links .desktop-links,
+  #navbar-appearance,
+  #github-link {
     display: none;
   }
 
-  #light-mode {
-    border-left: none;
-  }
-
-  #mobile-nav-menu {
+  #offcanvas-bars-icon {
     display: block;
   }
 
@@ -632,8 +636,8 @@ footer a:hover {
     padding-top: 12rem;
   }
 
-  #hero {
-    padding-top: 10rem;
+  section#hero {
+    padding-top: 8rem;
     flex-direction: column;
   }
 
@@ -680,14 +684,20 @@ footer a:hover {
 }
 
 @media only screen and (max-width: 520px) {
-  header, main {
+
+  main {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
   /* Navbar padding fix */
   nav.container-fixed {
-    padding-top: 1rem;
+    padding: 1rem;
+  }
+
+  #navbar-appearance,
+  #github-link {
+    display: none;
   }
 
   footer {
