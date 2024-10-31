@@ -2,56 +2,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ============ Theme Switch ============
   const themeSwitch = document.querySelectorAll('.theme-switch');
-  const checkBalls = document.querySelectorAll('.checkball');
-  const SunMoonIcons = document.querySelectorAll('.fa-sun, .fa-moon');
 
-  document.body.setAttribute('data-loading-theme', 'true');
+  // Remove data-loading-theme to re-enable theme transitions
+  document.documentElement.removeAttribute('data-loading-theme');
 
-  const savedTheme = localStorage.getItem('theme');
-
-  if (savedTheme === 'dark') {
-    document.body.classList.toggle('dark-theme');
-    toggleSunMoonIcons();
-    transformCheckBalls();
-  } else {
-    const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+  // Function to udpate theme
+  function updateTheme(theme) {
+    document.documentElement.classList.toggle('dark-theme', theme === 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }
 
-  setTimeout(() => {
-    document.body.removeAttribute('data-loading-theme');
-  }, 1);
-
-  function toggleSunMoonIcons() {
-    SunMoonIcons.forEach(sunMoonIcon => {
-      sunMoonIcon.classList.toggle('fa-sun');
-      sunMoonIcon.classList.toggle('fa-moon');
-    })
-  }
-
-  function transformCheckBalls() {
-    checkBalls.forEach(checkBall => {
-      checkBall.classList.toggle('checked');
-    })
-  }
-
   themeSwitch.forEach(swtch => {
-
     swtch.addEventListener('click', () => {
-
-      // Toggle .dark-theme class in the body element
-      document.body.classList.toggle('dark-theme');
-      const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
-      localStorage.setItem('theme', theme);
-
-
-      // Toggle the .fa-sun and .fa-moon classes in the icon elements
-      toggleSunMoonIcons();
-
-      // Toggle the .checked class in the checkball element
-      transformCheckBalls();
+      const currentTheme = document.documentElement.classList.contains('dark-theme') ? 'dark' : 'light';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      updateTheme(newTheme);
     })
-
   })
 
   // ============ Off Canvas Menu ============
