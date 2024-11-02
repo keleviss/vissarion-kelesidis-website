@@ -246,6 +246,10 @@ nav #logo a {
   transform: translateX(100%);
 }
 
+.fa-solid {
+  line-height: unset;
+}
+
 .fa-sun, .fa-moon {
   font-size: 0.65rem;
 }
