@@ -164,7 +164,13 @@ a.btn {
   background-color: var(--color-card-bg);
   border-radius: 2rem;
   padding: 2.5rem;
-  transition: box-shadow 0.3s, transform 0.3s, background-color 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.2s;
+}
+
+.card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .card-item h3 {
@@ -450,7 +456,7 @@ li#appearance {
   margin: 10px 0 0 5px;
 }
 
-.project-gallery .card-item h3 a:hover i {
+.project-gallery .card-item:hover i {
   visibility: visible;
 }
 
@@ -872,23 +878,25 @@ footer a:hover {
 }
 
 .resume-viewer {
+  display: flex;
   width: 100%;
-  height: fit-content;
+  height: auto;
   border: 1px solid var(--color-border);
   border-radius: 0.5rem;
   overflow: hidden;
+  justify-content: center;
 }
 
-.resume-viewer iframe {
-  border: none;
+.resume-viewer img {
+  width: 70%;
+  height: auto;
 }
 
-@media (max-width: 768px) {
-  .resume-viewer {
-    height: 600px;
+@media only screen and (max-width: 950px) {
+  .resume-viewer img {
+    width: 100%;
   }
 }
-
 
 /* Projects Page Styles */
 #projects-page {
@@ -963,5 +971,13 @@ footer a:hover {
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  #resume-page,
+  #contact-page,
+  #projects-page {
+    padding-top: 5rem;
   }
 }
