@@ -14,20 +14,40 @@ contactForm.onsubmit = async function (event) {
 
   const body = JSON.stringify({ pageName, email, subject, message });
 
-  fetch(apiUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body,
-  })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error('Error:', error));
+  // fetch(apiUrl, {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  //   body,
+  // })
+  //   .then(response => response.json())
+  //   .then(data => console.log(data))
+  //   .catch(error => console.error('Error:', error));
 
+  //   const inputs = document.querySelectorAll("input[type='text'], input[type='email'], input[type='number'], textarea");
+  //   // Loop through each input and set its value to an empty string
+  //   inputs.forEach(input => input.value = "");
+  //   // Reload the page
+  //   location.reload();
+  // Asynchronous fetch call with input clearing upon completion
+  try {
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body,
+    });
+
+    const data = await response.json();
+    console.log(data);
+
+    // Clear inputs after fetch completion
     const inputs = document.querySelectorAll("input[type='text'], input[type='email'], input[type='number'], textarea");
-    // Loop through each input and set its value to an empty string
     inputs.forEach(input => input.value = "");
-    // Reload the page
-    location.reload();
+
+  } catch (error) {
+    console.error('Error:', error);
+  }
 };
