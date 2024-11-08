@@ -7,12 +7,12 @@ const contactForm = document.getElementById('contact-form');
 contactForm.onsubmit = async function (event) {
   event.preventDefault();
 
-  const name = event.target.name.value;
+  const pageName = event.target.name.value;
   const email = event.target.email.value;
   const subject = event.target.subject.value;
   const message = event.target.message.value;
 
-  const body = JSON.stringify({ name, email, subject, message });
+  const body = JSON.stringify({ pageName, email, subject, message });
 
   fetch(apiUrl, {
     method: 'POST',
