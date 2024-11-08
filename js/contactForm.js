@@ -25,4 +25,9 @@ contactForm.onsubmit = async function (event) {
     .then(data => console.log(data))
     .catch(error => console.error('Error:', error));
 
+    const inputs = document.querySelectorAll("input[type='text'], input[type='email'], input[type='number'], textarea");
+    // Loop through each input and set its value to an empty string
+    inputs.forEach(input => input.value = "");
+    // Reload the page
+    location.reload();
 };
