@@ -14,19 +14,7 @@ contactForm.onsubmit = async function (event) {
 
   const body = JSON.stringify({ pageName, email, subject, message });
 
-  fetch(apiUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body,
-  })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error('Error:', error));
-
-    const inputs = document.querySelectorAll("#name, #email, #subject, #message");
-    // Loop through each input and set its value to an empty string
+  // Loop through each input and set its value to an empty string
   // fetch(apiUrl, {
   //   method: 'POST',
   //   headers: {
@@ -57,7 +45,7 @@ contactForm.onsubmit = async function (event) {
     console.log(data);
 
     // Clear inputs after fetch completion
-    const inputs = document.querySelectorAll("input[type='text'], input[type='email'], input[type='number'], textarea");
+    const inputs = document.querySelectorAll("#name, #email, #subject, #message");
     inputs.forEach(input => input.value = "");
 
   } catch (error) {
