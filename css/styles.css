@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Inter';
+  src: url("../webfonts/Inter-VariableFont_opsz\,wght.ttf") format('truetype');
+}
+
 :root {
   /* Typography */
   --font-primary: Inter, sans-serif;
