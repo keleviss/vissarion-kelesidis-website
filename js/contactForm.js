@@ -10,7 +10,7 @@ function displayPopup(status) {
   popup.style.display = 'flex';
   popupBackground.style.display = 'block';
 
-  const popupCloseBtn = popup.querySelector('button');
+  const popupCloseBtn = popup.querySelector('i.fa-xmark');
   popupCloseBtn.addEventListener('click', () => {
     popup.style.display = 'none';
     popupBackground.style.display = 'none';
