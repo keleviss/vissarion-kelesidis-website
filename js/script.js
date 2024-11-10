@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const offCanvasBarsIcon = document.getElementById('offcanvas-bars-icon');
   const offCanvasCloseIcon = document.getElementById('offcanvas-close-icon');
   const offCanvasMenu = document.getElementById('offcanvas-menu');
-  const navContainer = document.querySelector('nav.container-fixed');
+  const navContainer = document.querySelector('nav.container-full');
 
   let offCanvasShown = false;
 
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     offCanvasCloseIcon.style.display = 'block';
 
     // Add bottom border on the navContainer
-    navContainer.style.borderBottom = '1px solid var(--color-border)';
+    // navContainer.style.borderBottom = '1px solid var(--color-border)';
   }
 
   function hideOffCanvasMenu() {
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     offCanvasBarsIcon.style.display = '';
 
     // Remove bottom border from the navContainer
-    navContainer.style.borderBottom = '';
+    // navContainer.style.borderBottom = '';
   }
 
   offCanvasBarsIcon.addEventListener('click', showOffCanvasMenu)
@@ -99,29 +99,5 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
   })
-
-  // ============ Language Dropdown ============
-//   const langDropdown = document.getElementById('lang-dropdown');
-//   const dropdownMenu = document.getElementById('dropdown-menu');
-//   const selectedLang = document.getElementById('selected-lang');
-//   const dropdownItems = document.querySelectorAll('.dropdown-item');
-
-//   langDropdown.addEventListener('click', function () {
-//     dropdownMenu.classList.toggle('hidden');
-//   });
-
-//   dropdownItems.forEach(item => {
-//     item.addEventListener('click', function () {
-//       selectedLang.textContent = this.getAttribute('data-lang');
-//       dropdownMenu.classList.add('hidden');
-//     });
-//   });
-
-//   // Close the dropdown if clicked outside
-//   document.addEventListener('click', function (event) {
-//     if (!langDropdown.contains(event.target)) {
-//       dropdownMenu.classList.add('hidden');
-//     }
-//   });
 
 });

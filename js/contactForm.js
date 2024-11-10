@@ -4,6 +4,19 @@ const apiUrl = 'https://xkj2mll5m7jiyjbhdr4kktlg3i0vjlhi.lambda-url.eu-central-1
 // Form Element
 const contactForm = document.getElementById('contact-form');
 
+function displayPopup(status) {
+  const popup = document.getElementById(status);
+  const popupBackground = popup.parentElement;
+  popup.style.display = 'flex';
+  popupBackground.style.display = 'block';
+
+  const popupCloseBtn = popup.querySelector('button');
+  popupCloseBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+    popupBackground.style.display = 'none';
+  });
+}
+
 contactForm.onsubmit = async function (event) {
   event.preventDefault();
 
@@ -14,23 +27,6 @@ contactForm.onsubmit = async function (event) {
 
   const body = JSON.stringify({ pageName, email, subject, message });
 
-  // Loop through each input and set its value to an empty string
-  // fetch(apiUrl, {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
-  //   body,
-  // })
-  //   .then(response => response.json())
-  //   .then(data => console.log(data))
-  //   .catch(error => console.error('Error:', error));
-
-  //   const inputs = document.querySelectorAll("input[type='text'], input[type='email'], input[type='number'], textarea");
-  //   // Loop through each input and set its value to an empty string
-  //   inputs.forEach(input => input.value = "");
-  //   // Reload the page
-  //   location.reload();
   // Asynchronous fetch call with input clearing upon completion
   try {
     const response = await fetch(apiUrl, {
@@ -47,8 +43,10 @@ contactForm.onsubmit = async function (event) {
     // Clear inputs after fetch completion
     const inputs = document.querySelectorAll("#name, #email, #subject, #message");
     inputs.forEach(input => input.value = "");
+    displayPopup('success');
 
   } catch (error) {
     console.error('Error:', error);
+    displayPopup('error');
   }
 };
