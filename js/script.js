@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     offCanvasCloseIcon.style.display = 'block';
 
     // Add bottom border on the navContainer
-    // navContainer.style.borderBottom = '1px solid var(--color-border)';
+    navContainer.style.backDropFilter = 'none';
   }
 
   function hideOffCanvasMenu() {

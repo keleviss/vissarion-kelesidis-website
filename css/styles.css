@@ -60,6 +60,7 @@ html {
 }
 
 main {
+  /* background: radial-gradient(circle at top center, var(--color-link-active) 0%, transparent 10%); */
   padding: 2rem;
 }
 
@@ -195,6 +196,8 @@ nav.container-full {
   padding: 1rem 0;
   border-bottom: 1px solid var(--color-border);
   background-color: var(--color-background);
+  /* background-color: rgba(0, 0, 0, 0.315); */
+  backdrop-filter: blur(10px);
   transition: background-color 0.3s ease, border-bottom 0.2s ease;
 }
 
@@ -683,7 +686,7 @@ footer a:hover {
   }
 
   #hero {
-    padding-top: 6rem;
+    padding-top: 12rem;
     flex-direction: column;
   }
 
