@@ -4,10 +4,10 @@ I designed this website in order to showcase my web development projects and ski
 
 ## Pages
 This website is consisted of 4 pages:
-1. Home/Landing page: contains a quick summary of who I am and what I do, as well as my projects
-2. Resume: a page where you can see and download my resume
-3. Projects: a dedicated page where you can find my projects
-4. Contact: a page with a functional contact form and additional contact details
+1. [Home/Landing page](https://www.vissarion-kelesidis.me/): contains a quick summary of who I am and what I do, as well as my projects
+2. [Resume](https://www.vissarion-kelesidis.me/html/resume.html): a page where you can see and download my resume
+3. [Projects](https://www.vissarion-kelesidis.me/html/projects.html): a dedicated page where you can find my projects
+4. [Contact](https://www.vissarion-kelesidis.me/html/contact.html): a page with a functional contact form and additional contact details
 
 ## Development
 
