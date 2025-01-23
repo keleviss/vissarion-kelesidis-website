@@ -312,7 +312,7 @@ nav #logo a {
 
 /* Off Canavs Menu */
 #offcanvas-menu {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   top: 0;
   right: 0;
