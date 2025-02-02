@@ -22,7 +22,8 @@
   <link rel="stylesheet" href="../css/styles.css">
 
   <!-- Dev Icons -->
-  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"></noscript>
 
 </head>
 
@@ -61,17 +62,17 @@
           <div class="links-separation"></div>
 
           <div id="github-link">
-            <a target="_blank" href="https://www.github.com/keleviss">
-              <i class="fa-brands fa-github"></i>
+            <a aria-label="GitHub Profile (NavBar)" target="_blank" href="https://www.github.com/keleviss">
+              <i class="fa-brands fa-github" title="GitHub Profile"></i>
             </a>
           </div>
 
           <div id="offcanvas-bars-icon" class="mobile-nav-menu">
-            <i class="fa-solid fa-bars fa-xl"></i>
+            <i class="fa-solid fa-bars fa-xl" title="open menu"></i>
           </div>
 
           <div id="offcanvas-close-icon" class="mobile-nav-menu">
-            <i class="fa-solid fa-xmark fa-xl"></i>
+            <i class="fa-solid fa-xmark fa-xl" title="close menu"></i>
           </div>
         </div>
       </div>
@@ -119,7 +120,7 @@
 
       <div id="profile-img" class="flex-center">
         <!-- <img src="./resources/profileImage.webp" alt="An image of Vissarion Kelesidis"> -->
-        <img src="./resources/reebok.jpg" alt="An image of Vissarion Kelesidis">
+        <img src="./resources/reebok.jpg" alt="Vissarion Kelesidis Profile Photo">
       </div>
 
     </section>
@@ -132,16 +133,16 @@
         <div id="edu" class="card-item">
           <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
           <p>Currently, I'm pursuing a <b>Master's degree in Computer Science and Engineering</b> at the University of
-            West Attica. This academic journey has provided me with a strong theoretical foundation in computer science
-            principles and cutting-edge technologies. My coursework has covered a wide range of topics, from
+            West Attica. This academic journey has provided me with a strong foundation in computer science
+            principles and hands on experience in designing and developing high performance and scalable software. My coursework has covered a wide range of topics, from
             <b>algorithms</b>
             and <b>data structures</b> to <b>web development</b>.
           </p>
         </div>
         <div id="work" class="card-item">
           <h3><i class="fa-solid fa-briefcase"></i> Work Experience</h3>
-          <p>I have hands on experience as a <b>Front End Developer</b> at AG.KOUS, a Digital Marketing and Web Development agency. In this role, I
-            honed my skills in <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, and <b>Bootstrap</b>. I also gained valuable
+          <p>I have hands on experience as a <b>Front End Developer</b> while working as a freelancer in collaboration with a Digital Marketing and Web Development agency. In this role, I
+            challenged my self and sharpened my skills in <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, and <b>Bootstrap</b>. I also gained valuable
             experience with
             <b>WordPress</b>, <b>Photoshop</b>, <b>Illustrator</b>, and <b>Figma</b>. This position allowed me to design
             and redesign modern,
@@ -171,53 +172,66 @@
             alt="html icon" />
         </div>
         <div class="icon">
-          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" 
+          alt="css3 icon" />
         </div>
         <div class="icon">
           <img loading="lazy"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+            alt="javascript icon" />
         </div>
         <div class="icon">
           <img loading="lazy"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+            alt="react icon" />
         </div>
         <div class="icon">
           <img loading="lazy"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" />
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+            alt="bootstrap icon" />
         </div>
         <div class="icon">
           <img loading="lazy"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" />
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
+            alt="nodejs icon" />
         </div>
         <div class="icon">
           <img loading="lazy"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" />
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"
+            alt="express icon" />
         </div>
         <div class="icon">
           <img loading="lazy"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" />
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
+            alt="mongodb icon" />
         </div>
         <div class="icon">
           <img loading="lazy"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" />
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+            alt="postgresql icon" />
         </div>
         <div class="icon">
-          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" />
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg"
+          alt="bash icon" />
         </div>
         <div class="icon">
-          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
-        </div>
-        <div class="icon">
-          <img loading="lazy"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" />
-        </div>
-        <div class="icon">
-          <img loading="lazy"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg" />
+          <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+          alt="git icon" />
         </div>
         <div class="icon">
           <img loading="lazy"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" />
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg"
+            alt="photoshop icon" />
+        </div>
+        <div class="icon">
+          <img loading="lazy"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg"
+            alt="illustrator icon" />
+        </div>
+        <div class="icon">
+          <img loading="lazy"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+            alt="figma icon" />
         </div>
 
       </div>
@@ -314,18 +328,18 @@
         </a>
         <ul id="social-links">
           <li>
-            <a target="_blank" href="https://www.facebook.com/profile.php?id=100077396446673">
-              <i class="fa-brands fa-facebook fa-xl"></i>
+            <a aria-label="Facebook profile" target="_blank" href="https://www.facebook.com/profile.php?id=100077396446673">
+              <i class="fa-brands fa-facebook fa-xl" title="Facebook profile"></i>
             </a>
           </li>
           <li>
-            <a target="_blank" href="https://www.linkedin.com/in/vissarion-kelesidis/">
-              <i class="fa-brands fa-linkedin fa-xl"></i>
+            <a aria-label="LinkedIn profile" target="_blank" href="https://www.linkedin.com/in/vissarion-kelesidis/">
+              <i class="fa-brands fa-linkedin fa-xl" title="LinkedIn profile"></i>
             </a>
           </li>
           <li>
-            <a target="_blank" href="https://github.com/keleviss">
-              <i class="fa-brands fa-github fa-xl"></i>
+            <a aria-label="GitHub profile" target="_blank" href="https://github.com/keleviss">
+              <i class="fa-brands fa-github fa-xl" title="GitHub profile"></i>
             </a>
           </li>
         </ul>

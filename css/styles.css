@@ -56,7 +56,7 @@ html {
   font-family: var(--font-primary);
   background-color: var(--color-background);
   color: var(--color-text);
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 main {
@@ -167,11 +167,12 @@ a.btn {
 }
 
 .card-item {
+  border: 1px solid var(--color-border);
   background-color: var(--color-card-bg);
   border-radius: 2rem;
   padding: 2.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.2s;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s;
 }
 
 .card-item:hover {
@@ -425,13 +426,14 @@ li#appearance {
 
 /* Icon Component */
 .icon {
+  border: 1px solid var(--color-border);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
   border-radius: 1rem;
   background-color: var(--color-card-bg);
-  transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out, background-color 0.3s ease;
 }
 
 .icon i {
@@ -976,11 +978,12 @@ footer a:hover {
 }
 
 .project-card {
+  border: 1px solid var(--color-border);
   background-color: var(--color-card-bg);
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .project-card:hover {
@@ -1014,7 +1017,9 @@ footer a:hover {
 .project-tech span {
   background-color: var(--color-btn-secondary);
   color: var(--color-text);
+  /* color: whitesmoke; */
   padding: 0.25rem 0.5rem;
+  border: 1px solid var(--color-border);
   border-radius: 0.25rem;
   font-size: 0.875rem;
 }
