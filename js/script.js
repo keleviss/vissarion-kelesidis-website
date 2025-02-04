@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const offCanvasCloseIcon = document.getElementById('offcanvas-close-icon');
   const offCanvasMenu = document.getElementById('offcanvas-menu');
   const navContainer = document.querySelector('nav.container-full');
+  const homeLink = document.querySelector('a[href="#"]');
 
   let offCanvasShown = false;
 
@@ -64,6 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
   offCanvasBarsIcon.addEventListener('click', showOffCanvasMenu)
 
   offCanvasCloseIcon.addEventListener('click', hideOffCanvasMenu)
+  
+  homeLink.addEventListener('click', hideOffCanvasMenu)
 
   window.addEventListener('resize', () => {
     const width = window.innerWidth;
