@@ -711,6 +711,10 @@ footer a:hover {
     display: none;
   }
 
+  .card-item {
+    padding: 1.75rem;
+  }
+
   .card-item p {
     font-size: .9rem;
   }
