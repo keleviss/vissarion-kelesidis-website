@@ -44,7 +44,7 @@ const projects = [
   },
   {
     name: "Gaming Studio",
-    description: "A website design concept for a gaming studio.",
+    description: "A website design concept for a gaming studio. This project is a fully <b>responsive</b> website designed and developed to showcase a concept for a game studio's portfolio, services, and contact information. The website is built using modern web technologies, including only <b>HTML</b> and <b>CSS</b>. The layout is crafted with <b>Flexbox</b> and is enhanced with <b>media queries</b> to ensure it is fully responsive across different screen sizes.",
     technologies: [
       "HTML",
       "CSS",
@@ -71,11 +71,8 @@ function loadProjects(projects) {
 
     // Project Name
     const projectName = document.createElement("h3");
-    projectName.innerHTML = `
-      <a target="_blank" href="${project.github_link}">
-        ${project.name}
-      </a>
-    `;
+    projectName.id = String(project.name).toLowerCase().replace(" ", "");
+    projectName.textContent = project.name;
 
     // Project TECH
     const projectTech = document.createElement("div");
