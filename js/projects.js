@@ -103,19 +103,32 @@ function loadProjects(projects) {
     
     const learnMoreButton = document.createElement("a");
     learnMoreButton.classList.add("btn");
-    learnMoreButton.setAttribute("target", "_blank");
-
+    
     if (grid) {
       learnMoreButton.textContent = "Code";
       learnMoreButton.href = project.github_link;
+      learnMoreButton.setAttribute("target", "_blank");
     } else {
-      learnMoreButton.innerHTML = `Learn more <i class="fa-solid fa-arrow-right"></i>`;
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth < 520) {
+          learnMoreButton.innerHTML = `View`;
+        } else {
+          learnMoreButton.innerHTML = `Learn more <i class="fa-solid fa-arrow-right"></i>`;
+        }  
+      })
+
+      if (window.innerWidth < 520) {
+        learnMoreButton.innerHTML = `View`;
+      } else {
+        learnMoreButton.innerHTML = `Learn more <i class="fa-solid fa-arrow-right"></i>`;
+      }
       learnMoreButton.href = `./html/projects.html#${projectName.id}`;
     }
     
     const demoButton = document.createElement("a");
     demoButton.classList.add("btn");
-    demoButton.textContent = "Demo";
+    demoButton.textContent = "Live";
     demoButton.href = project.demo_link;
     demoButton.setAttribute("target", "_blank");
 
@@ -136,9 +149,6 @@ function loadProjects(projects) {
     projectImg.classList.add("project-img");
     projectImg.src = project.image;
 
-    // projectItem.appendChild(projectName);
-    // projectItem.appendChild(projectTech);
-    // projectItem.appendChild(projectDesc);
     projectItem.appendChild(projectDetails);
     projectItem.appendChild(projectImg);
 
