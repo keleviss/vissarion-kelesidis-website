@@ -6,6 +6,7 @@
 const projects = [
   {
     name: "My Website",
+    about: "Portfolio website for showcasing my skills and projects.",
     description: "This is my personal website/portfolio. I designed this website in <b>Figma</b> and I used simple <b>HTML</b>, <b>CSS</b> and <b>JavaScript</b> to develop it. I focused on the <b>responsiveness</b> and the <b>performance</b> of the website in order to create a smooth and user-friendly experience. Also, I developed a <b>custom contact form</b> which works by sending a request to an <b>AWS Lambda function</b> which then uses the <b>Notion API</b> to create a record on a private Notion database. Then, with <b>Notion Database Automations</b>, an email is sent to the person who submitted the form and notifies me as well.",
     technologies: [
       "HTML",
@@ -19,6 +20,7 @@ const projects = [
   },
   {
     name: "Playlyst",
+    about: "A modern web application for creating and saving Spotify playlists",
     description: "Playlyst is a web application that was developed with <b>React</b>, <b>CSS Modules</b>, and <b>JavaScript</b> to provide a new look and a user friendly way of creating, saving and playing Spotify playlists using the Spotify API. The app is responsive and works on most browsers and devices. It features secure login using <b>Spotify's OAuth 2.0</b>, searches songs using the <b>Spotify API</b>, creates playlists and saves those playists to the user's Spotify account. Also, you can listen to your playlist via an embedded widget using your playlist's ID.",
     technologies: [
       "React",
@@ -31,6 +33,7 @@ const projects = [
   },
   {
     name: "Weather Widget",
+    about: "A minimal weather widget for viewing current and future weather conditions",
     description: "A weather widget using the <b>OpenWeather API</b> developed with <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b>. Simply enter a city name to instantly view the current temperature, weather conditions, and a 5-day forecast. The app provides detailed metrics like humidity, wind speed, visibility, and atmospheric pressure, all displayed with a clean and user-friendly interface. The demo uses an <b>AWS Lambda function</b> in order to not expose the Open Weather API Token.",
     technologies: [
       "HTML",
@@ -44,6 +47,7 @@ const projects = [
   },
   {
     name: "Gaming Studio",
+    about: "Website design concept for a gaming studio with a fully responsive layout",
     description: "A website design concept for a gaming studio. This project is a fully <b>responsive</b> website designed and developed to showcase a concept for a game studio's portfolio, services, and contact information. The website is built using modern web technologies, including only <b>HTML</b> and <b>CSS</b>. The layout is crafted with <b>Flexbox</b> and is enhanced with <b>media queries</b> to ensure it is fully responsive across different screen sizes.",
     technologies: [
       "HTML",
@@ -58,6 +62,7 @@ const projects = [
 
 function loadProjects(projects) {
   const grid = document.querySelector(".projects-grid");
+  const gallery = document.querySelector(".project-gallery");
 
   projects.forEach(project => {
     const projectItem = document.createElement("div");
@@ -68,6 +73,7 @@ function loadProjects(projects) {
     projectDetails.classList.add("project-details");
 
     const div = document.createElement("div");
+    div.classList.add("project-details-container")
 
     // Project Name
     const projectName = document.createElement("h3");
@@ -85,17 +91,27 @@ function loadProjects(projects) {
     
     // Project Description
     const projectDesc = document.createElement("p");
-    projectDesc.innerHTML = project.description;
+    if (grid) {
+      projectDesc.innerHTML = project.description;
+    } else {
+      projectDesc.textContent = project.about;
+    }
     
     // Project Buttons Div
     const projectButtons = document.createElement("div");
     projectButtons.classList.add("project-buttons");
     
-    const codeButton = document.createElement("a");
-    codeButton.classList.add("btn");
-    codeButton.textContent = "Code";
-    codeButton.href = project.github_link;
-    codeButton.setAttribute("target", "_blank");
+    const learnMoreButton = document.createElement("a");
+    learnMoreButton.classList.add("btn");
+    learnMoreButton.setAttribute("target", "_blank");
+
+    if (grid) {
+      learnMoreButton.textContent = "Code";
+      learnMoreButton.href = project.github_link;
+    } else {
+      learnMoreButton.innerHTML = `Learn more <i class="fa-solid fa-arrow-right"></i>`;
+      learnMoreButton.href = `./html/projects.html#${projectName.id}`;
+    }
     
     const demoButton = document.createElement("a");
     demoButton.classList.add("btn");
@@ -103,7 +119,7 @@ function loadProjects(projects) {
     demoButton.href = project.demo_link;
     demoButton.setAttribute("target", "_blank");
 
-    projectButtons.appendChild(codeButton);
+    projectButtons.appendChild(learnMoreButton);
     projectButtons.appendChild(demoButton);
     // Project Buttons Div Created
 
@@ -126,7 +142,11 @@ function loadProjects(projects) {
     projectItem.appendChild(projectDetails);
     projectItem.appendChild(projectImg);
 
-    grid.appendChild(projectItem);
+    if (grid) {
+      grid.appendChild(projectItem);
+    } else {
+      gallery.appendChild(projectItem);
+    }
   });
 }
 
