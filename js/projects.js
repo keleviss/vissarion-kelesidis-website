@@ -73,7 +73,7 @@ function loadProjects(projects) {
     projectDetails.classList.add("project-details");
 
     const div = document.createElement("div");
-    div.classList.add("project-details-container")
+    div.classList.add("project-details-container");
 
     // Project Name
     const projectName = document.createElement("h3");
@@ -145,12 +145,16 @@ function loadProjects(projects) {
     // Project Details DIV created
 
     // Project Image
+    const projectImgContainer = document.createElement("div");
+    projectImgContainer.classList.add("project-img");
+
     const projectImg = document.createElement("img");
-    projectImg.classList.add("project-img");
     projectImg.src = project.image;
 
+    projectImgContainer.appendChild(projectImg);
+
     projectItem.appendChild(projectDetails);
-    projectItem.appendChild(projectImg);
+    projectItem.appendChild(projectImgContainer);
 
     if (grid) {
       grid.appendChild(projectItem);
