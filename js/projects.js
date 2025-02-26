@@ -146,6 +146,7 @@ function loadProjects(projects) {
     const projectImg = document.createElement("img");
     projectImg.src = project.image;
     projectImg.setAttribute("fetchpriority", "low");
+    projectImg.alt = project.name + " Screenshot";
 
     projectImgContainer.appendChild(projectImg);
 

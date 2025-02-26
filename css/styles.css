@@ -551,7 +551,7 @@ footer a:hover {
   display: inline-block;
 }
 
-#socials h3 {
+#socials h4 {
   display: inline-block;
 }
 
@@ -989,6 +989,10 @@ footer a:hover {
 
   footer {
     font-size: small;
+  }
+
+  h4 {
+    font-size: large;
   }
 }
 
