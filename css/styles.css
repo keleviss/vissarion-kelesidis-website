@@ -40,14 +40,14 @@ html.dark-theme {
   --color-tag-text: #819bea;
 }
 
-[data-loading-theme='true'] nav .container-fixed,
+/* [data-loading-theme='true'] nav .container-fixed,
 [data-loading-theme='true'] .card-item,
 [data-loading-theme='true'] #offcanvas-menu,
 [data-loading-theme='true'] .checkball,
 [data-loading-theme='true'] .fa-sun,
 [data-loading-theme='true'] .fa-moon {
   transition: none !important;
-}
+} */
 
 /* Reset & Base Styles */
 * {
