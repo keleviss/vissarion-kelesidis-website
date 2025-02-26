@@ -11,9 +11,9 @@
   <script src="../js/projects.js" type="module" defer></script>
   
   <!-- Styles -->
-  <link rel="stylesheet" href="../css/all.min.css">
   <link rel="stylesheet" href="../css/styles.css">
-  
+  <link rel="preload" href="../css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
   <script>
     // Prevent FOUC (Flash of Unstyled Content) with theme
     (function () {
