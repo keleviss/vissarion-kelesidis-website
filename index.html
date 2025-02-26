@@ -14,7 +14,6 @@
 
 
   <!-- Scripts -->
-  <script src="./js/themeLoader.js"></script>
   <script src="./js/script.js" defer></script>
   <script src="./js/projects.js" defer></script>
 
@@ -29,6 +28,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   </noscript>
 
+  <script>
+    // Prevent FOUC (Flash of Unstyled Content) with theme
+    (function () {
+      // Add this script as early as possible, ideally in the <head> of your HTML
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+
+      // Immediately set the theme class and data attribute
+      document.documentElement.classList.toggle('dark-theme', savedTheme === 'dark');
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.documentElement.setAttribute('data-loading-theme', 'true');
+    })();
+  </script>
 </head>
 
 <body>
@@ -235,7 +246,7 @@
       <h2>Projects</h2>
 
       <div class="project-gallery">
-        
+
       </div>
 
     </section>

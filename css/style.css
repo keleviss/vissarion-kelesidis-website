@@ -40,6 +40,7 @@ html.dark-theme {
   --color-tag-text: #819bea;
 }
 
+/* Disable transitions during theme loading */
 [data-loading-theme='true'] nav .container-fixed,
 [data-loading-theme='true'] .card-item,
 [data-loading-theme='true'] #offcanvas-menu,
@@ -171,9 +172,18 @@ a.btn {
   color: var(--color-background);
 }
 
-[data-theme='dark'] .btn,
-[data-theme='dark'] a.btn {
-  color: var(--color-text);
+/* Secondary button styles */
+#hero .btn:last-child {
+  color: var(--color-link-hover);
+  background-color: var(--color-btn-secondary);
+}
+
+#hero .btn:last-child:hover {
+  background-color: var(--color-btn-secondary-hover);
+}
+
+#hero .btn:last-child:active {
+  background-color: var(--color-btn-secondary-active);
 }
 
 .card-item {
@@ -221,13 +231,11 @@ nav .container-fixed {
   justify-content: space-between;
 }
 
-/* Logo */
 nav #logo a {
   font-size: 1.5rem;
   font-weight: 700;
 }
 
-/* Navbar Links */
 #nav-links {
   display: flex;
   justify-content: space-between;
@@ -286,8 +294,7 @@ nav #logo a {
   line-height: unset;
 }
 
-.fa-sun,
-.fa-moon {
+.fa-sun, .fa-moon {
   font-size: 0.65rem;
 }
 
@@ -319,13 +326,10 @@ nav #logo a {
 /* Mobile Navigation Menu */
 .mobile-nav-menu {
   display: none;
-}
-
-.mobile-nav-menu:hover {
   cursor: pointer;
 }
 
-/* Off Canavs Menu */
+/* Off Canvas Menu */
 #offcanvas-menu {
   position: fixed;
   z-index: 2;
@@ -391,20 +395,6 @@ li#appearance {
   gap: 20px;
 }
 
-/* Button Styles */
-#hero .btn:last-child {
-  color: var(--color-link-hover);
-  background-color: var(--color-btn-secondary);
-}
-
-#hero .btn:last-child:hover {
-  background-color: var(--color-btn-secondary-hover);
-}
-
-#hero .btn:last-child:active {
-  background-color: var(--color-btn-secondary-active);
-}
-
 #profile-img {
   flex: 1;
 }
@@ -433,16 +423,13 @@ li#appearance {
 
 /* Icon Component */
 .icon {
-  /* border: 2px solid var(--color-border); */
   border: 1px solid var(--color-btn-secondary);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
   border-radius: 0.75rem;
-  transition: transform 0.2s ease,
-    background-color 0.5s ease,
-    border 0.2s;
+  transition: transform 0.2s ease, background-color 0.5s ease, border 0.2s;
 }
 
 .icon img {
@@ -656,6 +643,7 @@ footer a:hover {
   color: var(--color-link-hover);
 }
 
+/* Popup Styles */
 .popup-background {
   width: 100%;
   height: 100vh;
@@ -673,7 +661,6 @@ footer a:hover {
   top: 50vh;
   left: 50%;
   transform: translateX(-50%);
-  /* margin: 2rem; */
   padding: 2.5rem 2.5rem 2rem;
   border-radius: 5px;
   background-color: var(--color-card-bg);
@@ -689,9 +676,6 @@ footer a:hover {
   top: 0;
   right: 0;
   padding: 0.3rem 0.5rem;
-}
-
-.popup .fa-xmark:hover {
   cursor: pointer;
 }
 
@@ -728,12 +712,6 @@ footer a:hover {
   height: auto;
 }
 
-@media only screen and (max-width: 950px) {
-  .resume-viewer img {
-    width: 100%;
-  }
-}
-
 /* Projects Page Styles */
 #projects-page {
   padding-top: 10rem;
@@ -744,7 +722,7 @@ footer a:hover {
   margin-bottom: 1rem;
 }
 
-#projects-page>p {
+#projects-page > p {
   margin-bottom: 3rem;
 }
 
@@ -888,9 +866,7 @@ footer a:hover {
   }
 }
 
-
 @media only screen and (max-width: 950px) {
-
   section.container-fixed {
     padding-top: 12rem;
   }
@@ -917,10 +893,13 @@ footer a:hover {
   .project-gallery .card-item h3 a i {
     visibility: visible;
   }
+  
+  .resume-viewer img {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
-
   #resume-page,
   #projects-page,
   #contact-page {
@@ -931,10 +910,13 @@ footer a:hover {
   .contact-info {
     order: -1;
   }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media only screen and (max-width: 720px) {
-
   #github-link,
   .links-separation,
   #navbar-appearance,
@@ -969,7 +951,6 @@ footer a:hover {
 }
 
 @media only screen and (max-width: 520px) {
-
   main {
     padding: 1rem;
   }
@@ -990,6 +971,20 @@ footer a:hover {
   footer {
     font-size: small;
   }
+  
+  #resume-page,
+  #contact-page,
+  #projects-page {
+    padding-top: 5rem;
+  }
+
+  .contact-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-info .details {
+    font-size: 0.9rem;
+  }
 }
 
 @media only screen and (max-width: 450px) {
@@ -1006,31 +1001,7 @@ footer a:hover {
   }
 }
 
-@media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 520px) {
-
-  #resume-page,
-  #contact-page,
-  #projects-page {
-    padding-top: 5rem;
-  }
-
-  .contact-info h2 {
-    font-size: 1.5rem;
-  }
-
-  .contact-info .details {
-    font-size: 0.9rem;
-  }
-}
-
 @media only screen and (max-width: 420px) {
-
   .card-item h3 {
     margin-bottom: 0.5rem;
   }
