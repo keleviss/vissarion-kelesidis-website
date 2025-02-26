@@ -1,8 +1,3 @@
-// import screenshot1 from "../assets/my-website-screenshot.png";
-// import screenshot2 from "../assets/playlyst-project-screenshot.png";
-// import screenshot3 from "../assets/weather-now-screenshot.png";
-// import screenshot4 from "../assets/game-studio-screenshot.png";
-
 const projects = [
   {
     name: "My Website",
@@ -14,7 +9,7 @@ const projects = [
       "JavaScript",
       "AWS Lambda",
     ],
-    image: "../assets/my-website-screenshot.png",
+    image: "../assets/my-website-screenshot.webp",
     github_link: "https://github.com/keleviss/vissarion-kelesidis-website",
     demo_link: "https://www.vissarion-kelesidis.me/"
   },
@@ -27,7 +22,7 @@ const projects = [
       "CSS Modules",
       "JavaScript",
     ],
-    image: "../assets/playlyst-project-screenshot.png",
+    image: "../assets/playlyst-project-screenshot.webp",
     github_link: "https://github.com/keleviss/playlyst",
     demo_link: "https://playlyst.netlify.app/"
   },
@@ -41,7 +36,7 @@ const projects = [
       "JavaScript",
       "AWS Lambda",
     ],
-    image: "../assets/weather-now-screenshot.png",
+    image: "../assets/weather-now-screenshot.webp",
     github_link: "https://github.com/keleviss/weather-widget",
     demo_link: "https://w3athernow.netlify.app/"
   },
@@ -54,7 +49,7 @@ const projects = [
       "CSS",
       "JavaScript",
     ],
-    image: "../assets/game-studio-screenshot.png",
+    image: "../assets/game-studio-screenshot.webp",
     github_link: "https://github.com/keleviss/game-studio-website-design",
     demo_link: "https://keleviss.github.io/game-studio-website-design/"
   }
